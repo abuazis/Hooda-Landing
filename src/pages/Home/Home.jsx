@@ -3,7 +3,7 @@ import { NavBar, Footer, Hero } from "../../components";
 
 const Home = () => {
   return (
-    <div>
+    <div className="font-primary">
       <NavBar />
       <Hero />
       <p>Halaman Home</p>
