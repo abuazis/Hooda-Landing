@@ -1,7 +1,11 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { CarouselImageOne } from "../../assets";
+import {
+  CarouselImageOne,
+  CarouselImageThree,
+  CarouselImageTwo,
+} from "../../assets";
 
 const Hero = () => {
   return (
@@ -20,16 +24,14 @@ const Hero = () => {
             return (
               <div
                 onClick={clickHandler}
-                className={
-                  "rounded-lg w-7 h-4 mx-2 inline-block bg-yellow-600"
-                }
+                className="rounded-lg w-7 h-4 mx-2 inline-block bg-yellow-600"
               />
             );
           } else {
             return (
               <div
                 onClick={clickHandler}
-                className={"rounded-full w-4 h-4 mx-2 inline-block bg-gray-400"}
+                className="rounded-full w-4 h-4 mx-2 inline-block bg-gray-400"
               />
             );
           }
@@ -57,7 +59,7 @@ const Hero = () => {
         </div>
         <div className="w-full">
           <img
-            src={CarouselImageOne}
+            src={CarouselImageTwo}
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
@@ -77,7 +79,7 @@ const Hero = () => {
         </div>
         <div className="w-full">
           <img
-            src={CarouselImageOne}
+            src={CarouselImageThree}
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
