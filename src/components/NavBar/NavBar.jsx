@@ -1,26 +1,81 @@
+
+
+// ! BATASANN 
+
 import React from 'react'
+import { HoodaLogo, NavBarIcon } from '../../assets'
+import MenuIcon from '@material-ui/icons/Menu';
+import { Drawer, SwipeableDrawer, Button } from '@material-ui/core';
+import { useState } from 'react';
+import clsx from 'clsx';
 
 const NavBar = () => {
+    const [sideBar, setSideBar] = useState(false)
+    console.log(`dari render`, sideBar)
+
+    const handleSideBar = (value)  =>   {
+        console.log(`dari handle open`,sideBar);
+        setSideBar(value)
+
+    }
+
+
+    // const toggleDrawer = (anchor, open) => (event) => {
+    //     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    //       return;
+    //     }
+    
+    //     setState({ ...state, [anchor]: open });
+    // };
+    
+    const sidebar_content = (
+        <div>
+            halo
+        </div>
+    )
+    
+  
+
     return (
-        <header class="text-gray-600 body-font outline-black bg-primary">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                <span class="ml-3 text-xl">Tailblocks</span>
+        <header class="sticky top-0 z-10  bg-primary text-white text-xs">
+            <div class="container mx-auto flex flex-row sm:flex-wrap p-2.5 sm:flex-col md:flex-row items-center">
+                
+                
+                {/* //! Menu Burger  */}
+                <div className="sm:hidden">
+                    <Button onClick={() => handleSideBar(true)} >
+                        <MenuIcon className="text-white" />
+                    </Button>
+                </div>
+                <Drawer anchor="left" open={sideBar} onClose={() => handleSideBar(false)}>
+                        {sidebar_content}
+                </Drawer>
+
+                <a href="/#" class="flex title-font font-medium items-center text-gray-900 ml-3 sm:ml-0 sm:mb-4 md:mb-0">
+                <HoodaLogo width="50" height="50" />
                 </a>
-                <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                <a class="mr-5 hover:text-gray-900">First Link</a>
-                <a class="mr-5 hover:text-gray-900">Second Link</a>
-                <a class="mr-5 hover:text-gray-900">Third Link</a>
-                <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+               
+
+                {/* //! nav  */}
+                <nav class="md:ml-auto md:mr-auto sm:flex flex-wrap items-center justify-center hidden">
+                <a href="/#" class="mr-5 ">Tentang Kami</a>
+                <a href="/#"class="mr-5 ">
+                    Layanan
+                    <span className="inline-block ml-1">
+                        <NavBarIcon width={10} height={10}/>
+                    </span>
+                </a>
+                <a href="/#"class="mr-5 ">
+                    Gabung Mitra Kami
+                    <span className="inline-block ml-1">
+                        <NavBarIcon width={10} height={10}/>
+                    </span>
+                </a>
+                <a href="/#" class="mr-5 ">Pusat Bantuan</a>
                 </nav>
-                <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-                </button>
+                <a href="/#" class="ml-auto sm:ml-0 sm:inline-flex items-center border-0 py-1 px-3 focus:outline-none sm:mt-4 md:mt-0">
+                    Bahasa Indonesia
+                </a>
             </div>
         </header>
     )
