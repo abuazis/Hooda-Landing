@@ -89,6 +89,8 @@ const Footer = () => {
                 <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
                     <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
                 </p>
+
+                {/* //! Logo  */}
                 <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                     <a class="text-gray-500">
                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
