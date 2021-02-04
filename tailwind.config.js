@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       colors: {
         primary : "#F15D2A"
-      }
+      },
+      fontFamily: {
+        primary : "Montserrat"
+      },
     },
   },
   variants: {
