@@ -2,3 +2,5 @@
 // import LoginBg from "./images/login.jpeg"
 
 // export {RegisterBg,LoginBg};
+export * from './icon';
+export * from './image';

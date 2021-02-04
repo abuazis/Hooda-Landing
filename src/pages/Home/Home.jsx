@@ -1,15 +1,15 @@
-import React from 'react'
-import { NavBar, Footer } from '../../components'
-
+import React from "react";
+import { NavBar, Footer, Hero } from "../../components";
 
 const Home = () => {
-    return (
-        <div>
-            <NavBar />
-            <p>Halaman Home</p>
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <div>
+      <NavBar />
+      <Hero />
+      <p>Halaman Home</p>
+      <Footer />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
