@@ -91,70 +91,72 @@ const NavBar = () => {
                     </a> */}
 
                     {/* //! Menu 1  */}
-                    <Button
-                    ref={anchorRef2}
-                    // aria-controls={open ? 'menu-list-grow' : undefined}
-                    onClick={() => handleMenu2(true)}
-                    className="mr-5"
-                    >
-                        <p className="text-white normal-case text-xs font-primary font-normal">
-                            Layanan
-                        </p>
-                        <span className="inline-block ml-1 mr-5">
-                            <NavBarIcon width={10} height={10}/>
-                        </span>
-                    </Button>
-                    <Popper open={menu2} anchorEl={anchorRef2.current} role={undefined} transition disablePortal>
-                        {({ TransitionProps, placement }) => (
-                            <Grow
-                            {...TransitionProps}
-                            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                            >
-                            <Paper>
-                                <ClickAwayListener onClickAway={() => handleMenu2(false)}>
-                                <MenuList  id="menu-list-grow" >
-                                    <MenuItem >Profile</MenuItem>
-                                    <MenuItem >My account</MenuItem>
-                                    <MenuItem >Logout</MenuItem>
-                                </MenuList>
-                                </ClickAwayListener>
-                            </Paper>
-                            </Grow>
-                        )}
-                    </Popper>
+                    <div className="mr-5">
+                        <Button
+                        ref={anchorRef2}
+                        // aria-controls={open ? 'menu-list-grow' : undefined}
+                        onClick={() => handleMenu2(true)}
+                        >
+                            <p className="text-white normal-case text-xs font-primary font-normal">
+                                Layanan
+                            </p>
+                            <span className="inline-block ml-1 ">
+                                <NavBarIcon width={10} height={10}/>
+                            </span>
+                        </Button>
+                        <Popper open={menu2} anchorEl={anchorRef2.current} role={undefined} transition disablePortal>
+                            {({ TransitionProps, placement }) => (
+                                <Grow
+                                {...TransitionProps}
+                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                                >
+                                <Paper>
+                                    <ClickAwayListener onClickAway={() => handleMenu2(false)}>
+                                    <MenuList  id="menu-list-grow" >
+                                        <MenuItem >Profile</MenuItem>
+                                        <MenuItem >My account</MenuItem>
+                                        <MenuItem >Logout</MenuItem>
+                                    </MenuList>
+                                    </ClickAwayListener>
+                                </Paper>
+                                </Grow>
+                            )}
+                        </Popper>
+                    </div>
 
                     {/* //! Menu 2  */}
-                    <Button
-                    ref={anchorRef}
-                    // aria-controls={open ? 'menu-list-grow' : undefined}
-                    onClick={() => handleMenu(true)}
-                    className="mr-5"
-                    >
-                        <p className="text-white normal-case text-xs font-primary font-normal">
-                        Gabung Mitra Kami
-                        </p>
-                        <span className="inline-block ml-1 mr-5">
-                            <NavBarIcon width={10} height={10}/>
-                        </span>
-                    </Button>
-                    <Popper open={menu1} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-                        {({ TransitionProps, placement }) => (
-                            <Grow
-                            {...TransitionProps}
-                            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                            >
-                            <Paper>
-                                <ClickAwayListener onClickAway={() => handleMenu(false)}>
-                                <MenuList  id="menu-list-grow" >
-                                    <MenuItem >Profile</MenuItem>
-                                    <MenuItem >My account</MenuItem>
-                                    <MenuItem >Logout</MenuItem>
-                                </MenuList>
-                                </ClickAwayListener>
-                            </Paper>
-                            </Grow>
-                        )}
-                    </Popper>
+                    <div className="mr-5">
+                        <Button
+                        ref={anchorRef}
+                        // aria-controls={open ? 'menu-list-grow' : undefined}
+                        onClick={() => handleMenu(true)}
+                        >
+                            <p className="text-white normal-case text-xs font-primary font-normal">
+                            Gabung Mitra Kami
+                            </p>
+                            <span className="inline-block ml-1 ">
+                                <NavBarIcon width={10} height={10}/>
+                            </span>
+                        </Button>
+                        <Popper open={menu1} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                            {({ TransitionProps, placement }) => (
+                                <Grow
+                                {...TransitionProps}
+                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                                >
+                                <Paper>
+                                    <ClickAwayListener onClickAway={() => handleMenu(false)}>
+                                    <MenuList  id="menu-list-grow" >
+                                        <MenuItem >Profile</MenuItem>
+                                        <MenuItem >My account</MenuItem>
+                                        <MenuItem >Logout</MenuItem>
+                                    </MenuList>
+                                    </ClickAwayListener>
+                                </Paper>
+                                </Grow>
+                            )}
+                        </Popper>
+                    </div>
 
                     <a href="/#">Pusat Bantuan</a>
                 </nav>
