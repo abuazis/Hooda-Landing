@@ -4,7 +4,7 @@ import { HoodaLogo } from '../../assets'
 const Footer = () => {
     return (
         <footer class="body-font bg-primary text-white">
-            <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="container px-5 xl:px-24 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
 
                 {/* //! Logo kiri  */}
                 <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
