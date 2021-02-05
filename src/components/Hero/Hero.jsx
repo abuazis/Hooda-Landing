@@ -43,11 +43,11 @@ const Hero = () => {
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
-          <div className="absolute bottom-16 left-32 right-32">
-            <h1 className="text-white text-left text-5xl font-bold mb-7">
+          <div className="absolute bottom-16 lg:left-32 md:left-20 sm:left-14 left-6 lg:right-32 md:right-20 sm:right-14 right-6">
+            <h1 className="text-white text-left sm:text-5xl text-3xl font-bold mb-7">
               Get a head start
             </h1>
-            <p className="text-white text-left text-base leading-7">
+            <p className="text-white text-left sm:text-base text-sm sm:leading-7 leading-6">
               Driver Jempolan in Indonesian means top drivers. We ensure the
               quality of our driver-partners through a thorough recruitment
               process, followed by a comprehensive on-boarding module and
@@ -63,11 +63,11 @@ const Hero = () => {
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
-          <div className="absolute bottom-16 left-32 right-32">
-            <h1 className="text-white text-left text-5xl font-bold mb-7">
+          <div className="absolute bottom-16 lg:left-32 md:left-20 sm:left-14 left-6 lg:right-32 md:right-20 sm:right-14 right-6  ">
+            <h1 className="text-white text-left sm:text-5xl text-3xl font-bold mb-7">
               Need Help ? Find The Solution
             </h1>
-            <p className="text-white text-left text-base leading-7">
+            <p className="text-white text-left sm:text-base text-sm sm:leading-7 leading-6">
               Yes, all the information you need is available on our In-app Help
               page, because as a SuperApp we are committed to provide you with
               solutions to all complications. So, you don't need to manually
@@ -83,11 +83,11 @@ const Hero = () => {
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
-          <div className="absolute bottom-16 left-32 right-32">
-            <h1 className="text-white text-left text-5xl font-bold mb-7">
+          <div className="absolute bottom-16 lg:left-32 md:left-20 sm:left-14 left-6 lg:right-32 md:right-20 sm:right-14 right-6  ">
+            <h1 className="text-white text-left sm:text-5xl text-3xl font-bold mb-7">
               Treat Some Plates, Get You New Mates
             </h1>
-            <p className="text-white text-left text-base leading-7">
+            <p className="text-white text-left sm:text-base text-sm sm:leading-7 leading-6">
               It's time for you to be free from the complicated drama of topping
               up credit and data! Moreover, the process of topping up on GoPulsa
               is really fast, it doesn't take up to a minute. Not only credit,
