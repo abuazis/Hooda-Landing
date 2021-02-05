@@ -3,11 +3,13 @@ import { FeatureImageOne, FeatureImageTwo } from "../../assets";
 
 const Feature = () => {
   return (
-    <div className="xl:px-40 lg:px-28 md:px-20 px-10 flex flex-col pt-20 pb-24">
+    <div className="container m-auto xl:px-24 md:px-10 px-8 flex flex-col pt-20 pb-24">
       <div className="flex lg:flex-row flex-col-reverse mb-28 justify-center items-center">
         <div className="flex flex-col">
-          <h1 className="text-5xl font-bold mb-7">Staple Goods Program</h1>
-          <p className="text-base leading-8">
+          <h1 className="lg:text-4xl text-3xl font-bold mb-7">
+            Staple Goods Program
+          </h1>
+          <p className="sm:text-base text-sm sm:leading-8 leading-7">
             Beneficiaries receive staple goods packages consisting of basic
             needs such as rice, cooking oil, and instant foods. As of May 24th
             2020, we have distributed 455,000 staple goods vouchers for our
@@ -31,8 +33,10 @@ const Feature = () => {
       </div>
       <div className="flex lg:flex-row-reverse flex-col-reverse justify-center items-center">
         <div className="flex flex-col">
-          <h1 className="text-5xl font-bold mb-7">Family Meals Workers</h1>
-          <p className="text-base leading-8">
+          <h1 className="lg:text-4xl text-3xl font-bold mb-7">
+            Family Meals Workers
+          </h1>
+          <p className="sm:text-base text-sm sm:leading-8 leading-7">
             This program provides distributed free meal vouchers to
             beneficiaries who can redeem them at specially selected micro,
             small, and medium sized enterprises, which also helps them earn
