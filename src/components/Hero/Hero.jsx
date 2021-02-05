@@ -24,7 +24,7 @@ const Hero = () => {
             return (
               <div
                 onClick={clickHandler}
-                className="rounded-lg w-7 h-4 mx-2 inline-block bg-yellow-600"
+                className="rounded-lg w-7 h-4 mx-2 inline-block bg-primary"
               />
             );
           } else {

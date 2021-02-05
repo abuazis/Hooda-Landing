@@ -1,12 +1,12 @@
 import React from "react";
-import { NavBar, Footer, Hero } from "../../components";
+import { NavBar, Footer, Hero, Feature } from "../../components";
 
 const Home = () => {
   return (
     <div className="font-primary">
       <NavBar />
       <Hero />
-      <p>Halaman Home</p>
+      <Feature />
       <Footer />
     </div>
   );
