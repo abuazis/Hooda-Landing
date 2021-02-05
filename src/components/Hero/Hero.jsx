@@ -18,7 +18,6 @@ const Hero = () => {
         showArrows={false}
         showThumbs={false}
         showStatus={false}
-        stopOnHover={false}
         renderIndicator={(clickHandler, isSelected) => {
           if (isSelected) {
             return (
@@ -43,8 +42,8 @@ const Hero = () => {
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
-          <div className="absolute bottom-16 lg:left-32 md:left-20 sm:left-14 left-6 lg:right-32 md:right-20 sm:right-14 right-6">
-            <h1 className="text-white text-left sm:text-5xl text-3xl font-bold mb-7">
+          <div className="absolute m-auto bottom-16 container xl:px-24 px-5 left-0 right-0">
+            <h1 className="text-white text-left sm:text-4xl text-3xl font-bold mb-7">
               Get a head start
             </h1>
             <p className="text-white text-left sm:text-base text-sm sm:leading-7 leading-6">
@@ -63,8 +62,8 @@ const Hero = () => {
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
-          <div className="absolute bottom-16 lg:left-32 md:left-20 sm:left-14 left-6 lg:right-32 md:right-20 sm:right-14 right-6  ">
-            <h1 className="text-white text-left sm:text-5xl text-3xl font-bold mb-7">
+          <div className="absolute m-auto bottom-16 container xl:px-24 px-5 left-0 right-0">
+            <h1 className="text-white text-left sm:text-4xl text-3xl font-bold mb-7">
               Need Help ? Find The Solution
             </h1>
             <p className="text-white text-left sm:text-base text-sm sm:leading-7 leading-6">
@@ -83,8 +82,8 @@ const Hero = () => {
             style={{ height: 445 }}
             className="w-full h-full object-cover relative"
           />
-          <div className="absolute bottom-16 lg:left-32 md:left-20 sm:left-14 left-6 lg:right-32 md:right-20 sm:right-14 right-6  ">
-            <h1 className="text-white text-left sm:text-5xl text-3xl font-bold mb-7">
+          <div className="absolute m-auto bottom-16 container xl:px-24 px-5 left-0 right-0">
+            <h1 className="text-white text-left sm:text-4xl text-3xl font-bold mb-7">
               Treat Some Plates, Get You New Mates
             </h1>
             <p className="text-white text-left sm:text-base text-sm sm:leading-7 leading-6">
