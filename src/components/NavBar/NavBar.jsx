@@ -4,16 +4,26 @@
 
 import React, { useRef, useState } from 'react'
 import { HoodaLogo, NavBarIcon } from '../../assets'
+import LanguageIcon from '@material-ui/icons/Language';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Drawer, SwipeableDrawer, Button, Grow, Paper, Popper, ClickAwayListener, MenuList, MenuItem } from '@material-ui/core';
-import clsx from 'clsx';
+import { Drawer, Button, Grow, Paper, Popper, ClickAwayListener, MenuList, MenuItem } from '@material-ui/core';
 
 const NavBar = () => {
     const [sideBar, setSideBar] = useState(false)
-    const [menu1, setMenu1] = useState(false)
-    const [menu2, setMenu2] = useState(false)
-    const anchorRef = useRef(null);
-    const anchorRef2 = useRef(null);
+    const [menu, setMenu] = useState({
+        menu1 : false,
+        menu2 : false,
+        menu3 : false
+    })
+
+    const handleMenu = (index_menu,value) => {
+        setMenu({...menu, [index_menu]:value})
+    }
+
+
+    const menu1Ref = useRef(null);
+    const menu2Ref = useRef(null);
+    const menu3Ref = useRef(null);
 
 
     console.log(`dari render`, sideBar)
@@ -24,98 +34,70 @@ const NavBar = () => {
 
     }
 
-    const handleMenu = (value)  =>   {
-        console.log(`dari handle open`,sideBar);
-        setMenu1(value)
-
-    }
-
-    const handleMenu2 = (value)  =>   {
-        console.log(`dari handle open`,sideBar);
-        setMenu2(value)
-
-    }
-
-
-    // const toggleDrawer = (anchor, open) => (event) => {
-    //     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    //       return;
-    //     }
-    
-    //     setState({ ...state, [anchor]: open });
-    // };
-    
     const sidebar_content = (
-        <div>
-            halo
+        <div className="bg-primary text-white h-44 ">
+            <div className="container mx-auto">
+                <h1>Haloo dari drawerr</h1>
+            </div>
         </div>
     )
     
   
 
     return (
-        <header class="sticky top-0 z-10  bg-primary text-white text-xs">
-            <div class="container mx-auto flex flex-row sm:flex-wrap p-2.5 sm:flex-col lg:flex-row items-center">
-                
-                
+        <header class="sticky top-0 z-10  bg-primary text-white text-xs font-semibold" >
+            <div class="flex flex-row  py-3  items-center  mx-auto container xl:px-24">
                 {/* //! Menu Burger  */}
-                <div className="sm:hidden">
+                <div className="md:hidden">
                     <Button onClick={() => handleSideBar(true)} >
                         <MenuIcon className="text-white" />
                     </Button>
                 </div>
-                <Drawer anchor="left" open={sideBar} onClose={() => handleSideBar(false)}>
+                <Drawer anchor="top" open={sideBar} onClose={() => handleSideBar(false)}>
                         {sidebar_content}
                 </Drawer>
 
-                <a href="/#" class="flex title-font font-medium items-center text-gray-900 ml-3 sm:ml-0 sm:mb-4 lg:mb-0">
-                <HoodaLogo width="50" height="50" />
+
+                {/* //! Logo */}
+                <a href="/#" class="w-full md:w-auto flex justify-center font-medium text-gray-900 ml-3 sm:ml-0  lg:mb-0">
+                    <HoodaLogo width="50" height="50" />
                 </a>
                
 
                 {/* //! nav  */}
-                <nav class=" hidden md:ml-auto md:mr-auto sm:flex flex-wrap items-center justify-center">
-                    <a href="/#" class="mr-5 ">Tentang Kami</a>
+                <nav class="hidden flex-wrap md:flex  items-center mx-auto">
+                    <a href="/#" class="mr-2">Tentang Kami</a>
                     
-                    {/* <a href="/#"class="mr-5 ">
-                        Layanan
-                        <span className="inline-block ml-1">
-                            <NavBarIcon width={10} height={10}/>
-                        </span>
-                    </a>
-                    <a href="/#"class="mr-5 ">
-                        Gabung Mitra Kami
-                        <span className="inline-block ml-1">
-                            <NavBarIcon width={10} height={10}/>
-                        </span>
-                    </a> */}
-
                     {/* //! Menu 1  */}
-                    <div className="mr-5">
+                    <div className="mr-2">
                         <Button
-                        ref={anchorRef2}
+                        ref={menu1Ref}
                         // aria-controls={open ? 'menu-list-grow' : undefined}
-                        onClick={() => handleMenu2(true)}
+                        onClick={() => handleMenu("menu1",true)}
                         >
-                            <p className="text-white normal-case text-xs font-primary font-normal">
+                            <p className="text-white normal-case text-xs font-primary font-semibold">
                                 Layanan
                             </p>
                             <span className="inline-block ml-1 ">
                                 <NavBarIcon width={10} height={10}/>
                             </span>
                         </Button>
-                        <Popper open={menu2} anchorEl={anchorRef2.current} role={undefined} transition disablePortal>
+                        <Popper open={menu.menu1} anchorEl={menu1Ref.current} role={undefined} transition disablePortal>
                             {({ TransitionProps, placement }) => (
                                 <Grow
                                 {...TransitionProps}
                                 style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                                 >
                                 <Paper>
-                                    <ClickAwayListener onClickAway={() => handleMenu2(false)}>
+                                    <ClickAwayListener onClickAway={() => handleMenu("menu1",false)}>
                                     <MenuList  id="menu-list-grow" >
-                                        <MenuItem >Profile</MenuItem>
-                                        <MenuItem >My account</MenuItem>
-                                        <MenuItem >Logout</MenuItem>
+                                        {["Layanan1","Layanan2","Layanan3"].map(item => {
+                                            return <MenuItem>
+                                                <p className="font-primary text-xs">
+                                                    {item}
+                                                </p>
+                                            </MenuItem>
+                                        })}
                                     </MenuList>
                                     </ClickAwayListener>
                                 </Paper>
@@ -125,31 +107,31 @@ const NavBar = () => {
                     </div>
 
                     {/* //! Menu 2  */}
-                    <div className="mr-5">
-                        <Button
-                        ref={anchorRef}
-                        // aria-controls={open ? 'menu-list-grow' : undefined}
-                        onClick={() => handleMenu(true)}
-                        >
-                            <p className="text-white normal-case text-xs font-primary font-normal">
+                    <div className="mr-2">
+                        <Button ref={menu2Ref} onClick={() => handleMenu("menu2",true)}>
+                            <p className="text-white normal-case text-xs font-primary font-semibold">
                             Gabung Mitra Kami
                             </p>
                             <span className="inline-block ml-1 ">
                                 <NavBarIcon width={10} height={10}/>
                             </span>
                         </Button>
-                        <Popper open={menu1} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                        <Popper open={menu.menu2} anchorEl={menu2Ref.current} role={undefined} transition disablePortal>
                             {({ TransitionProps, placement }) => (
                                 <Grow
                                 {...TransitionProps}
                                 style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                                 >
                                 <Paper>
-                                    <ClickAwayListener onClickAway={() => handleMenu(false)}>
+                                    <ClickAwayListener onClickAway={() => handleMenu("menu2",false)}>
                                     <MenuList  id="menu-list-grow" >
-                                        <MenuItem >Profile</MenuItem>
-                                        <MenuItem >My account</MenuItem>
-                                        <MenuItem >Logout</MenuItem>
+                                        {["mitra1","mitra2","mitra3"].map(item => {
+                                            return <MenuItem>
+                                                <p className="font-primary text-xs px-11">
+                                                    {item}
+                                                </p>
+                                            </MenuItem>
+                                        })}
                                     </MenuList>
                                     </ClickAwayListener>
                                 </Paper>
@@ -160,9 +142,41 @@ const NavBar = () => {
 
                     <a href="/#">Pusat Bantuan</a>
                 </nav>
-                <a href="/#" class="ml-auto sm:ml-0 sm:inline-flex items-center border-0 py-1 px-3  sm:mt-4 lg:mt-0">
-                    Bahasa Indonesia
-                </a>
+                <div className="ml-auto  flex-wrap mr-5">
+                    <Button ref={menu3Ref} onClick={() => handleMenu("menu3",true)} >
+                        {/* //! isi  */}
+                        <LanguageIcon className="text-white text-xs" fontSize="small"/>
+                        <p href="/#" class="hidden lg:block mx-0.5 flex-wrap items-center text-white normal-case text-xs font-semibold">
+                            Bahasa Indonesia
+                        </p>
+                        <span className="inline-block ml-1 ">
+                            <NavBarIcon width={10} height={10}/>
+                        </span>
+
+                    </Button>
+                    <Popper open={menu.menu3} anchorEl={menu3Ref.current} role={undefined} transition disablePortal>
+                        {({ TransitionProps, placement }) => (
+                            <Grow
+                            {...TransitionProps}
+                            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                            >
+                            <Paper>
+                                <ClickAwayListener onClickAway={() => handleMenu("menu3",false)}>
+                                <MenuList  id="menu-list-grow" >
+                                        {["Bahasa1","Bahasa2","Bahasa3"].map(item => {
+                                            return <MenuItem>
+                                                <p className="font-primary text-xs">
+                                                    {item}
+                                                </p>
+                                            </MenuItem>
+                                        })}
+                                </MenuList>
+                                </ClickAwayListener>
+                            </Paper>
+                            </Grow>
+                        )}
+                    </Popper>
+                </div>
             </div>
         </header>
     )
