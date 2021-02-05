@@ -3,7 +3,7 @@ import { FeatureImageOne, FeatureImageTwo } from "../../assets";
 
 const Feature = () => {
   return (
-    <div className="lg:px-40 sm:px-32 px-12 flex flex-col pt-20 pb-24">
+    <div className="xl:px-40 lg:px-28 md:px-20 px-10 flex flex-col pt-20 pb-24">
       <div className="flex lg:flex-row flex-col-reverse mb-28 justify-center items-center">
         <div className="flex flex-col">
           <h1 className="text-5xl font-bold mb-7">Staple Goods Program</h1>
@@ -14,10 +14,10 @@ const Feature = () => {
             driver-partners via Alfamart. In this program free meals are
             provided for healthcare workers. As of May 24th 2020, we have
             distributed 176,000 free meal packages for healthcare workers at 15
-            hospitals across the Jabodetabek area. which also helps them earn
+            hospitals across the city area. which also helps them earn
             additional income. As of May 24th 2020, we have distributed 640,000
-            family meals vouchers. at specially selected micro, small, and
-            medium sized enterprises.{" "}
+            family meals vouchers. at specially always makes all have selected
+            micro, small, and medium sized enterprises.{" "}
           </p>
         </div>
         <div className="lg:mr-20 mr-0 mb-20" />
