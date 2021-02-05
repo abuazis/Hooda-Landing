@@ -18,7 +18,6 @@ const Hero = () => {
         showArrows={false}
         showThumbs={false}
         showStatus={false}
-        stopOnHover={false}
         renderIndicator={(clickHandler, isSelected) => {
           if (isSelected) {
             return (
