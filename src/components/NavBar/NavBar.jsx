@@ -123,8 +123,8 @@ const NavBar = () => {
   
 
     return (
-        <header class="sticky top-0 z-10  bg-primary text-white text-xs font-semibold" >
-            <div class="flex flex-row  py-3  items-center  mx-auto container xl:px-24">
+        <header class="sticky top-0   bg-primary text-white text-xs font-semibold z-50" >
+            <div class="flex flex-row  py-3  items-center  mx-auto container md:px-6 xl:px-24">
                 {/* //! Menu Burger  */}
                 <div className="md:hidden">
                     <Button onClick={() => handleSideBar(true)} >

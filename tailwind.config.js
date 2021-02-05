@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         primary : "Montserrat"
       },
+      backgroundImage: theme => ({
+        'footer-image': "url('/src/assets/images/footer_image.png')",
+      })
     },
   },
   variants: {
