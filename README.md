@@ -1,6 +1,6 @@
 # Hooda Landing Page
 
-See Live Project Here [Demo Link](https://github.com/facebook/create-react-app)
+See Live Project Here [Demo Link](https://hooda-landing.vercel.app/)
 
 ## Who Contributed
 
